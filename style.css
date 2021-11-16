@@ -1,0 +1,29 @@
+table{
+    width: 800px;
+    border: 2px solid;
+    border-collapse: collapse;
+    border-top: 0;
+    font-size: 16px;
+}
+tr,td{
+    border: 2px solid;
+    padding: 15px 10px;
+    border-top: 0;
+    color: black;
+}
+th{
+    border: 2px solid #337ab7;
+    border-top: 0;
+    padding: 15px 10px;
+    color: #505050;
+}
+tbody{
+    background-color: #505050;
+    border-top: 0;
+}
+tfoot tr td{
+    background-color: #337ab7;
+    border: 3px solid #505050;
+    border-top: 0;
+    color: white;
+}
