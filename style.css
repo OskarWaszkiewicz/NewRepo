@@ -9,7 +9,7 @@ table{
 caption{
     font-weight: bold;
 }
-tr,td{
+td{
     border: 2px solid;
     padding: 15px 10px;
     border-top: 0;
