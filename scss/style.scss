@@ -1,0 +1,211 @@
+@import 'mixins';
+@import 'variables';
+
+*{
+    margin: 0;
+    padding: 0;
+}
+
+body{
+    background-color: #999;
+}
+
+.cointeiner{
+    max-width: $win_width;
+    margin: auto;
+}
+
+header{
+    @include Size($win_width, 70px);
+    border-bottom: 2px #ccc solid;
+    background-color: #fff;
+    box-sizing: border-box;
+    position: relative;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    img{
+        flex-grow: 0;
+        &.user{
+            @include Size(40px, 40px);
+            border-radius: 50%;
+            justify-self: right;
+        }
+        &.chat{
+            @include Size(30px, 30px);
+            margin: 0 20px;
+        }
+        &.logo{
+            @include Size(45px, 30px);
+            margin: 0 50px;
+        }
+    }
+    p{
+        justify-content: end;
+        flex-grow: 0;
+        margin-right: 20px;
+    }
+    input{
+        margin: 0 150px;
+        flex-grow: 3;
+        border-radius: 40px;
+        border: 1px solid #999;
+        background-color: #eee;
+        padding: 6px 10px;
+        opacity: 0.7;
+        &:hover{
+            opacity: 1;
+            border: 1px solid #666;
+        }
+    }
+}
+
+.content{
+    @include Size($win_width);
+    background-color: #ccc;
+    position: relative;
+    float: left;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    aside{
+        @include Size($aside_width,1200px);
+        background-color: #333;
+        position: relative;
+        display: flex;
+        flex-direction: column;
+        nav{
+            a{
+                @include Size($aside_width, 80px);
+                display: flex;
+                align-items: center;
+                color: wheat;
+                text-decoration: none;
+                box-shadow: inset 0 0 0 darkviolet;
+                box-sizing: border-box;
+                justify-content: center;
+                transition-property: box-shadow;
+                transition-duration: 600ms;
+                transition-timing-function: ease;
+                &:hover{
+                    box-shadow: inset $aside_width 0 0 0 darkviolet;
+                }
+                &:visited{
+                    color: wheat;
+                }
+            }
+        }
+        p{
+            color:#666;
+            font-size: 12px;
+            position: absolute;
+            bottom: 0;
+            left: 60px;
+        }
+    }
+    section{
+        @include Size($cont_width);
+        display: flex;
+        flex-flow: row wrap;
+        .hotel{
+            @include Size("nothing",250px);
+            img{
+                @include Size($image_in_cont_width,$image_in_cont_width/1.5);
+                float: left;
+            }
+            .hotelName{
+                background-color: #fff;
+                @include Size($cont_width - 70px,45px);
+                float: left;
+                p{
+                    text-align: right;
+                }
+            }
+            .rate{
+                @include Size(70px, 45px);
+                float: left;
+                background-color: violet;
+                text-align: center;
+            }
+        }
+        .descrip{
+            @include Size(536px);
+            margin: 40px;
+            background-color: #fff;
+            .end{
+                @include Size(500px);
+                position: relative;
+                img{
+                    @include Size(40px, 40px);
+                    position: absolute;
+                    border-radius: 50%;
+                    border: 5px white solid;
+                    right: 50px;
+                    &:nth-child(4){
+                        right: 10px;
+                    }
+                    &:nth-child(3){
+                        right: 30px;
+                    }
+                    &:nth-child(2){
+                        right: 50px;
+                    }
+                    &:nth-child(1){
+                        right: 70px;
+                    }
+                }
+            }
+        }
+        .comment{
+            float: inherit;
+            margin: 40px;
+            .com1, .com2{
+                @include Size(196px, 250px);
+                background-color: #fff;
+                margin-bottom: 50px;
+                position: relative;
+                img{
+                    @include Size(40px, 40px);
+                    border-radius: 50%;
+                    bottom: 30px;
+                    left: 10px;
+                    position: absolute;
+                }
+                p{
+                    bottom: 30px;
+                    left: 70px;
+                    position: absolute;
+                }
+                h2{
+                    position: absolute;
+                    display: block;
+                    right: 0;
+                    bottom: 40px;
+                }
+            }
+            a{
+                text-align: center;
+                color: red;
+            }
+        }
+        .booking{
+            text-align: center;
+            float: left;
+            button{
+                @include Size(100px, 50px);
+                color: wheat;
+                background-color: darkviolet;
+                box-shadow: inset 0 0 0 #FF037D;
+                border-radius: 50px;
+                border: 0;
+                justify-content: center;
+                transition-property: box-shadow;
+                transition-duration: 600ms;
+                transition-timing-function: ease;
+                &:hover{
+                    box-shadow: inset 4px 0px 50px 2px #FF037D;
+                }
+            }
+        }
+    }
+}
