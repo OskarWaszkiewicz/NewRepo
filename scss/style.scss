@@ -1,9 +1,13 @@
 @import 'mixins';
 @import 'variables';
+@import 'media';
+
 
 *{
     margin: 0;
     padding: 0;
+    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+    font-size: 14px;
 }
 
 body{
@@ -62,7 +66,7 @@ header{
 
 .content{
     @include Size($win_width);
-    background-color: #ccc;
+    background-color: #eee;
     position: relative;
     float: left;
     display: flex;
@@ -86,7 +90,6 @@ header{
                 justify-content: center;
                 transition-property: box-shadow;
                 transition-duration: 600ms;
-                transition-timing-function: ease;
                 &:hover{
                     box-shadow: inset $aside_width 0 0 0 darkviolet;
                 }
@@ -108,50 +111,82 @@ header{
         display: flex;
         flex-flow: row wrap;
         .hotel{
-            @include Size("nothing",250px);
+            @include Size("nothing", $hotel_hight);
+            box-shadow: 0px 20px 40px 0px #ddd;
             img{
                 @include Size($image_in_cont_width,$image_in_cont_width/1.5);
                 float: left;
             }
             .hotelName{
                 background-color: #fff;
-                @include Size($cont_width - 70px,45px);
+                @include Size($cont_width,50px);
                 float: left;
-                p{
-                    text-align: right;
+                color: #999;
+                td{
+                    padding: 0 20px;
+                    h2{
+                        font-size: 28px;
+                    }
+                    p{
+                        text-align: right;
+                        color: red;
+                        text-decoration: underline;
+                    }
                 }
-            }
-            .rate{
-                @include Size(70px, 45px);
-                float: left;
-                background-color: violet;
-                text-align: center;
+                .rate{
+                    @include Size(70px);
+                    padding: 0;
+                    background-image: linear-gradient(to right, darkviolet, #530077);
+                    text-align: center;
+                    color: #fff;
+                    p{
+                        text-align: center;
+                        color: #fff;
+                    }
+                }
             }
         }
         .descrip{
-            @include Size(536px);
+            @include Size($descrip_width);
+            box-sizing: border-box;
             margin: 40px;
             background-color: #fff;
+            padding: 30px;
+            box-shadow: 0px 0px 10px 0px #999;
+            p{
+                margin: 20px;
+            }
+            table:first-of-type{
+                margin: 30px;
+                tr{
+                    td{
+                        padding: 3px
+                    }
+                }
+            }
             .end{
-                @include Size(500px);
-                position: relative;
-                img{
-                    @include Size(40px, 40px);
-                    position: absolute;
-                    border-radius: 50%;
-                    border: 5px white solid;
-                    right: 50px;
-                    &:nth-child(4){
-                        right: 10px;
-                    }
-                    &:nth-child(3){
-                        right: 30px;
-                    }
-                    &:nth-child(2){
-                        right: 50px;
-                    }
-                    &:nth-child(1){
-                        right: 70px;
+                @include Size($descrip_width);
+                margin: 50px 0;
+                td{
+                    position: relative;
+                    img{
+                        @include Size(40px, 40px);
+                        position: absolute;
+                        border-radius: 50%;
+                        border: 5px white solid;
+                        bottom: -10px;
+                        &:nth-child(4){
+                            right: 30px;
+                        }
+                        &:nth-child(3){
+                            right: 50px;
+                        }
+                        &:nth-child(2){
+                            right: 70px;
+                        }
+                        &:nth-child(1){
+                            right: 90px;
+                        }
                     }
                 }
             }
@@ -159,11 +194,28 @@ header{
         .comment{
             float: inherit;
             margin: 40px;
-            .com1, .com2{
+            box-sizing: border-box;
+            text-align: center;
+            .com{
                 @include Size(196px, 250px);
+                box-shadow: 0px 0px 10px 0px #999;
                 background-color: #fff;
+                padding: 30px;
                 margin-bottom: 50px;
+                box-sizing: border-box;
+                text-align: left;
                 position: relative;
+                blockquote{
+                    quotes: "\201C" "\201C" "\201C" "\201C";
+                }
+                blockquote::before{
+                    position: absolute;
+                    content: open-quote;
+                    font-size: 5em;
+                    left: 0;
+                    top: 0;
+                    opacity: 0.2;
+                }
                 img{
                     @include Size(40px, 40px);
                     border-radius: 50%;
@@ -173,37 +225,145 @@ header{
                 }
                 p{
                     bottom: 30px;
-                    left: 70px;
+                    left: 60px;
                     position: absolute;
                 }
                 h2{
                     position: absolute;
                     display: block;
-                    right: 0;
-                    bottom: 40px;
+                    right: 5px;
+                    bottom: 30px;
                 }
             }
             a{
-                text-align: center;
                 color: red;
+            }
+            a:hover{
+                color: #ff6f6f;
             }
         }
         .booking{
+            @include Size($cont_width);
+            justify-content: center;
+            align-self: flex-end;
             text-align: center;
             float: left;
             button{
                 @include Size(100px, 50px);
                 color: wheat;
-                background-color: darkviolet;
+                background-image: linear-gradient(to right, darkviolet, #530077);
                 box-shadow: inset 0 0 0 #FF037D;
                 border-radius: 50px;
                 border: 0;
                 justify-content: center;
                 transition-property: box-shadow;
                 transition-duration: 600ms;
-                transition-timing-function: ease;
                 &:hover{
                     box-shadow: inset 4px 0px 50px 2px #FF037D;
+                    cursor: pointer;
+                }
+            }
+        }
+    }
+}
+
+
+@include mediaTel{
+    $cont_width: 500px;
+    $image_in_cont_width: $cont_width/3;
+    $hotel_hight: $image_in_cont_width/1.5+50;
+    $descrip_width: $cont_width - 80px;
+    header{
+        @include Size($cont_width, 90px);
+        input{
+            margin: 0 0px;
+            align-self: flex-end;
+        }
+    }
+    .content{
+        @include Size($cont_width);
+        flex-direction: column;
+        aside{
+            @include Size($cont_width,80px);
+            flex-direction: row;
+            p{
+                display: none;
+            }
+            nav{
+                @include Size($cont_width,80px);
+                align-content: flex-start;
+                display: flex;
+                justify-content: center;
+                a{
+                    @include Size($cont_width/4, 80px);
+                    box-shadow: inset 0 0 0 darkviolet;
+                    transition-property: box-shadow;
+                    transition-duration: 600ms;
+                    &:hover{
+                        box-shadow: inset 0 $aside_width 0 0 darkviolet;
+                    }
+                }
+            }
+        }
+        section{
+            @include Size($cont_width);
+            .hotel{
+                @include Size("nothing", $hotel_hight);
+                img{
+                    @include Size($image_in_cont_width,$image_in_cont_width/1.5);
+                }
+                .hotelName{
+                    @include Size($cont_width,45px);
+                }
+                .rate{
+                    @include Size(70px, 45px);
+                }
+            }
+            .descrip{
+                @include Size($descrip_width);
+                .end{
+                    @include Size($descrip_width);
+                    font-size: 12px;
+                    img{
+                        @include Size(10px,10px);
+                    }
+                }
+            }
+            .comment{
+                .com{
+                    @include Size($cont_width - 80px, 170px);
+                }
+            }
+        }
+    }
+}
+
+@include mediaTablet{
+    header{
+        @include Size($cont_width, 70px);
+    }
+    .content{
+        @include Size($cont_width);
+        flex-direction: column;
+        aside{
+            @include Size($cont_width,80px);
+            flex-direction: row;
+            p{
+                display: none;
+            }
+            nav{
+                @include Size($cont_width,80px);
+                align-content: flex-start;
+                display: flex;
+                justify-content: center;
+                a{
+                    @include Size($cont_width/4, 80px);
+                    box-shadow: inset 0 0 0 darkviolet;
+                    transition-property: box-shadow;
+                    transition-duration: 600ms;
+                    &:hover{
+                        box-shadow: inset 0 $aside_width 0 0 darkviolet;
+                    }
                 }
             }
         }

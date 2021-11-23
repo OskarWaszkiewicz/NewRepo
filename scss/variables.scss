@@ -1,5 +1,7 @@
 $win_width: 1200px;
 $aside_width: 216px;
 $cont_width: $win_width - $aside_width;
-$image_in_cont_width: ($win_width - 216)/3;
+$image_in_cont_width: $cont_width/3;
 $booking_width: 100px;
+$hotel_hight: $image_in_cont_width/1.5+50;
+$descrip_width: 536px;
