@@ -11,12 +11,14 @@ body {
 
 .cointeiner {
   max-width: 1200px;
+  width: 100vw;
   margin: auto;
 }
 
 header {
   height: 70px;
-  width: 1200px;
+  width: 100vw;
+  max-width: 1200px;
   border-bottom: 2px #ccc solid;
   background-color: #fff;
   -webkit-box-sizing: border-box;
@@ -71,10 +73,10 @@ header p {
 }
 
 header input {
-  margin: 0 150px;
-  -webkit-box-flex: 3;
-      -ms-flex-positive: 3;
-          flex-grow: 3;
+  margin: 0 100px;
+  -webkit-box-flex: 2;
+      -ms-flex-positive: 2;
+          flex-grow: 2;
   border-radius: 40px;
   border: 1px solid #999;
   background-color: #eee;
@@ -88,7 +90,8 @@ header input:hover {
 }
 
 .content {
-  width: 1200px;
+  width: 100vw;
+  max-width: 1200px;
   background-color: #eee;
   position: relative;
   float: left;
@@ -104,8 +107,9 @@ header input:hover {
 }
 
 .content aside {
-  height: 1200px;
-  width: 216px;
+  height: 1150px;
+  width: 100vw;
+  max-width: 216px;
   background-color: #333;
   position: relative;
   display: -webkit-box;
@@ -119,7 +123,8 @@ header input:hover {
 
 .content aside nav a {
   height: 80px;
-  width: 216px;
+  width: 100vw;
+  max-width: 216px;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -161,7 +166,8 @@ header input:hover {
 }
 
 .content section {
-  width: 984px;
+  width: calc(100% - 216px);
+  max-width: 984px;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -169,24 +175,29 @@ header input:hover {
   -webkit-box-direction: normal;
       -ms-flex-flow: row wrap;
           flex-flow: row wrap;
+  background-color: #eee;
 }
 
 .content section .hotel {
-  height: 268.66667px;
+  height: 150px;
+  width: 100%;
   -webkit-box-shadow: 0px 20px 40px 0px #ddd;
           box-shadow: 0px 20px 40px 0px #ddd;
+  background-color: #eee;
 }
 
 .content section .hotel img {
-  height: 218.66667px;
-  width: 328px;
+  height: auto;
+  width: 100%;
+  max-width: calc(100%/3);
   float: left;
 }
 
 .content section .hotel .hotelName {
   background-color: #fff;
   height: 50px;
-  width: 984px;
+  width: 100%;
+  max-width: 984px;
   float: left;
   color: #999;
 }
@@ -217,10 +228,12 @@ header input:hover {
 .content section .hotel .hotelName .rate p {
   text-align: center;
   color: #fff;
+  text-decoration: none;
 }
 
 .content section .descrip {
-  width: 536px;
+  width: 50%;
+  max-width: 536px;
   -webkit-box-sizing: border-box;
           box-sizing: border-box;
   margin: 40px;
@@ -242,38 +255,45 @@ header input:hover {
   padding: 3px;
 }
 
-.content section .descrip .end {
-  width: 536px;
+.content section .descrip p {
+  width: 100%;
+  max-width: 536px;
   margin: 50px 0;
 }
 
-.content section .descrip .end td {
-  position: relative;
+.content section .descrip p.lucy {
+  margin-bottom: 0;
 }
 
-.content section .descrip .end td img {
+.content section .descrip div {
+  height: 40px;
+  width: 140px;
+  position: relative;
+  float: right;
+}
+
+.content section .descrip div img {
   height: 40px;
   width: 40px;
   position: absolute;
   border-radius: 50%;
   border: 5px white solid;
-  bottom: -10px;
 }
 
-.content section .descrip .end td img:nth-child(4) {
-  right: 30px;
+.content section .descrip div img:first-of-type {
+  right: 60px;
 }
 
-.content section .descrip .end td img:nth-child(3) {
-  right: 50px;
+.content section .descrip div img:nth-of-type(2) {
+  right: 40px;
 }
 
-.content section .descrip .end td img:nth-child(2) {
-  right: 70px;
+.content section .descrip div img:nth-of-type(3) {
+  right: 20px;
 }
 
-.content section .descrip .end td img:nth-child(1) {
-  right: 90px;
+.content section .descrip div img:nth-of-type(4) {
+  right: 0px;
 }
 
 .content section .comment {
@@ -286,7 +306,8 @@ header input:hover {
 
 .content section .comment .com {
   height: 250px;
-  width: 196px;
+  width: 100%;
+  max-width: 196px;
   -webkit-box-shadow: 0px 0px 10px 0px #999;
           box-shadow: 0px 0px 10px 0px #999;
   background-color: #fff;
@@ -329,8 +350,10 @@ header input:hover {
 .content section .comment .com h2 {
   position: absolute;
   display: block;
+  font-size: 27px;
   right: 5px;
   bottom: 30px;
+  color: #FF037D;
 }
 
 .content section .comment a {
@@ -342,14 +365,18 @@ header input:hover {
 }
 
 .content section .booking {
-  width: 984px;
+  width: 100vw;
+  max-width: 984px;
   -webkit-box-pack: center;
       -ms-flex-pack: center;
           justify-content: center;
-  -ms-flex-item-align: end;
-      align-self: flex-end;
   text-align: center;
   float: left;
+}
+
+.content section .booking h3 {
+  font-size: 20px;
+  color: #999;
 }
 
 .content section .booking button {
@@ -382,7 +409,8 @@ header input:hover {
 @media screen and (max-width: 480px) {
   header {
     height: 90px;
-    width: 500px;
+    width: 100vh;
+    max-width: 500px;
   }
   header input {
     margin: 0 0px;
@@ -395,10 +423,12 @@ header input:hover {
     -webkit-box-direction: normal;
         -ms-flex-direction: column;
             flex-direction: column;
+    word-wrap: break-word;
   }
   .content aside {
     height: 80px;
-    width: 500px;
+    width: 100vh;
+    max-width: 500px;
     -webkit-box-orient: horizontal;
     -webkit-box-direction: normal;
         -ms-flex-direction: row;
@@ -458,25 +488,30 @@ header input:hover {
   }
   .content section .descrip .end {
     width: 420px;
-    font-size: 12px;
   }
   .content section .descrip .end img {
     height: 10px;
     width: 10px;
   }
+  .content section .descrip .end td {
+    font-size: 12px;
+  }
   .content section .comment .com {
     height: 170px;
-    width: 420px;
+    width: calc(100% - 80px);
+    max-width: 500px;
   }
 }
 
 @media screen and (min-width: 481px) and (max-width: 1024px) {
   header {
     height: 70px;
-    width: 984px;
+    width: 100vw;
+    max-width: 984px;
   }
   .content {
-    width: 984px;
+    width: 100vw;
+    max-width: 984px;
     -webkit-box-orient: vertical;
     -webkit-box-direction: normal;
         -ms-flex-direction: column;
@@ -484,7 +519,8 @@ header input:hover {
   }
   .content aside {
     height: 80px;
-    width: 984px;
+    width: 100vw;
+    max-width: 984px;
     -webkit-box-orient: horizontal;
     -webkit-box-direction: normal;
         -ms-flex-direction: row;
@@ -495,7 +531,8 @@ header input:hover {
   }
   .content aside nav {
     height: 80px;
-    width: 984px;
+    width: 100vw;
+    max-width: 984px;
     -ms-flex-line-pack: start;
         align-content: flex-start;
     display: -webkit-box;
@@ -507,7 +544,8 @@ header input:hover {
   }
   .content aside nav a {
     height: 80px;
-    width: 246px;
+    width: 100vw;
+    max-width: 246px;
     -webkit-box-shadow: inset 0 0 0 darkviolet;
             box-shadow: inset 0 0 0 darkviolet;
     -webkit-transition-property: -webkit-box-shadow;
@@ -520,6 +558,41 @@ header input:hover {
   .content aside nav a:hover {
     -webkit-box-shadow: inset 0 216px 0 0 darkviolet;
             box-shadow: inset 0 216px 0 0 darkviolet;
+  }
+  .content section {
+    width: 100vw;
+    max-width: 984px;
+  }
+  .content section .hotel {
+    height: 250px;
+    width: 100vw;
+    max-width: 984px;
+  }
+  .content section .hotel img {
+    height: auto;
+    width: 100%;
+    max-width: calc(100%/3);
+  }
+  .content section .descrip {
+    width: 50vw;
+    max-width: 536px;
+    min-width: 350px;
+  }
+  .content section .descrip table {
+    width: 30vw;
+    max-width: 536px;
+  }
+  .content section .descrip .end {
+    width: 30vw;
+    max-width: 536px;
+  }
+  .content section .comment {
+    width: 40vw;
+    max-width: 196px;
+  }
+  .content section .comment .com {
+    width: 40vw;
+    max-width: 196px;
   }
 }
 /*# sourceMappingURL=style.css.map */
