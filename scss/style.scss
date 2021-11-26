@@ -294,16 +294,35 @@ header{
 
 
 @include mediaTel{
-    $cont_width: 500px;
+    $cont_width: 100vw;
     $image_in_cont_width: $cont_width/3;
-    $hotel_hight: $image_in_cont_width/1.5+50;
-    $descrip_width: $cont_width - 80px;
+    $hotel_hight: round(($image_in_cont_width/1.5+150)/1vw)+px;
+    $descrip_width: calc(100vw - 80px);
     header{
-        @include Size(100vh,90px);
+        @include Size(100vw,90px);
         max-width: $cont_width;
+        img{
+            margin: 0;
+            &.logo{
+                margin: 4px;
+                align-self: flex-start;
+            }
+            &.chat{
+                margin: 8px;
+                align-self: flex-start;
+            }
+            &.user{
+                margin: 4px;
+                align-self: flex-start;
+            }
+        }
+        p{
+            display: none;
+        }
         input{
             margin: 0 0px;
             align-self: flex-end;
+            flex-grow: 1;
         }
     }
     .content{
@@ -311,7 +330,7 @@ header{
         flex-direction: column;
         word-wrap: break-word;
         aside{
-            @include Size(100vh,80px);
+            @include Size(100vw,80px);
             max-width: $cont_width;
             flex-direction: row;
             p{
@@ -349,6 +368,11 @@ header{
             }
             .descrip{
                 @include Size($descrip_width);
+                table{
+                    &:first-of-type{
+                        margin: 0; 
+                    }
+                }
                 .end{
                     @include Size($descrip_width);
                     img{
@@ -361,7 +385,7 @@ header{
             }
             .comment{
                 .com{
-                    @include Size(calc(100% - 80px), 170px);
+                    @include Size(100%, 170px);
                     max-width: $cont_width;
                 }
             }
