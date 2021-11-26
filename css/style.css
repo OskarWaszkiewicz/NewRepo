@@ -1,0 +1,108 @@
+.ad {
+  background-image: url("../images/Back.png");
+  background-repeat: no-repeat;
+  background-size: cover;
+  width: 400px;
+  height: 300px;
+  position: relative;
+  overflow: hidden;
+  margin: auto;
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+.ad .logo {
+  position: absolute;
+  left: 0;
+  top: 0;
+}
+
+.ad .topframe {
+  position: absolute;
+  top: 0;
+  right: 0;
+}
+
+.ad__paragrapf {
+  margin: 0;
+  width: auto;
+  font-size: large;
+  color: #750303;
+}
+
+.ad__paragrapf-down {
+  position: absolute;
+  bottom: 0;
+}
+
+.ad__paragrapf-right {
+  position: absolute;
+  right: 5px;
+}
+
+.ad__paragrapf-left {
+  position: absolute;
+  left: 5px;
+}
+
+.ad .redButton {
+  position: absolute;
+  background-color: #750303;
+  border: none;
+  color: white;
+  font-size: larger;
+  width: 240px;
+  height: 50px;
+  left: 5px;
+  bottom: 25px;
+  visibility: hidden;
+  opacity: 1;
+}
+
+.ad .parrots {
+  position: absolute;
+  top: 20px;
+  right: 0;
+}
+
+.ad .parrots2 {
+  position: absolute;
+  top: 45px;
+  right: 3px;
+}
+
+.ad .contFrame {
+  position: absolute;
+  top: 15px;
+  left: -80px;
+  width: 80%;
+  height: 80%;
+  visibility: hidden;
+  opacity: 1;
+}
+
+.ad .text {
+  position: absolute;
+  top: 175px;
+  right: 24px;
+  visibility: hidden;
+}
+
+.ad .list {
+  visibility: hidden;
+  opacity: 1;
+  list-style: none;
+  position: absolute;
+  font-size: 18px;
+  padding: 0;
+  left: 5px;
+  top: 50px;
+}
+
+.ad .list li::before {
+  content: "\25A0";
+  color: #750303;
+  display: inline-block;
+  width: 1em;
+  margin: -1px;
+}
+/*# sourceMappingURL=style.css.map */

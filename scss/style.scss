@@ -1,0 +1,94 @@
+.ad{
+    background-image: url("../images/Back.png");
+    background-repeat: no-repeat;
+    background-size: cover;
+    width: 400px;
+    height: 300px;
+    position: relative;
+    overflow: hidden;
+    margin: auto;
+    font-family: Arial, Helvetica, sans-serif;
+    .logo{
+        position: absolute;
+        left: 0;
+        top: 0;
+    }
+    .topframe{
+        position: absolute;
+        top: 0;
+        right: 0;
+    }
+    &__paragrapf{
+        margin: 0;
+        width: auto;
+        font-size: large;
+        color: #750303;
+        &-down{
+            position: absolute;
+            bottom: 0;
+        }
+        &-right{
+            position: absolute;
+            right: 5px;
+        }
+        &-left{
+            position: absolute;
+            left: 5px;
+        }
+    }
+    .redButton{
+        position: absolute;
+        background-color: #750303;
+        border: none;
+        color: white;
+        font-size: larger;
+        width: 240px;
+        height: 50px;
+        left:5px;
+        bottom: 25px;
+        visibility: hidden;
+        opacity: 1;
+    }
+    .parrots{
+        position: absolute;
+        top: 20px;
+        right: 0;
+    }
+    .parrots2{
+        position: absolute;
+        top: 45px;
+        right: 3px;
+    }
+    .contFrame{
+        position: absolute;
+        top: 15px;
+        left: -80px;
+        width: 80%;
+        height: 80%;
+        visibility: hidden;
+        opacity: 1;
+    }
+    .text{
+        position: absolute;
+        top: 175px;
+        right: 24px;
+        visibility: hidden;
+    }
+    .list{
+        visibility: hidden;
+        opacity: 1;
+        list-style: none;
+        position: absolute;
+        font-size: 18px;
+        padding: 0;
+        left: 5px;
+        top: 50px;
+        li::before{
+            content: "\25A0";
+            color: #750303;
+            display: inline-block;
+            width: 1em;
+            margin: -1px;
+        }
+    }
+}
