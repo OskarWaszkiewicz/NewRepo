@@ -1,0 +1,31 @@
+{
+  "name": "mynewrepo",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/OskarWaszkiewicz/NewRepo.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/OskarWaszkiewicz/NewRepo/issues"
+  },
+  "homepage": "https://github.com/OskarWaszkiewicz/NewRepo#readme",
+  "devDependencies": {
+    "browser-sync": "^2.27.7",
+    "del": "^6.0.0",
+    "gulp": "^4.0.2",
+    "gulp-autoprefixer": "^8.0.0",
+    "gulp-sass": "^5.0.0",
+    "run-sequence": "^2.2.1"
+  },
+  "browserslist": [
+    "defaults"
+  ],
+}
