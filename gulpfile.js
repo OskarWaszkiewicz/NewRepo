@@ -1,40 +1,50 @@
 const gulp = require("gulp");
-const browserSync = require("browser-sync").create();
-const sass = require("gulp-sass");
+const sass = require('gulp-sass')(require('sass'));
 const autoprefixer = require("gulp-autoprefixer");
-var del = require('del');
+const browserSync = require("browser-sync").create();
 
-gulp.task('browserSync', function() {
-    browserSync.init({
-        server: {
-            baseDir: "src"
-        },
-    })
-});
 
-gulp.task('sass', () => {
-  return gulp.src('src/sass/**/*.scss')
-  .pipe(sass())
-  .pipe(autoprefixer())
-  .pipe(gulp.dest('src/css'))
-  .pipe(browserSync.reload({
-    stream: true
-    }))
-});
+const server = (cb) => {
+  browserSync.init({
+    server: {
+      baseDir: "./dist"
+    },
+  });
 
-gulp.task('watch', ['browserSync', 'sass'], () => {
-  gulp.watch('src/sass/**/*.scss', ['sass']);
-  gulp.watch('src/*.html', browserSync.reload);
-  gulp.watch('src/js/**/*.js', browserSync.reload);
-});
+  cb();
+};
 
-gulp.task('clean:dist', () => {
-  return del.sync('dist');
-});
+const css = function () {
+  return gulp.src("src/scss/*.scss")
+    .pipe(sass())
+    .pipe(autoprefixer())
+    .pipe(gulp.dest("dist/css"))
+    .pipe(browserSync.stream());
+};
 
-var runSequence = require('run-sequence');
+const js = function (cb) {
+  return gulp.src('src/js/*.js')
+    .pipe(gulp.dest('dist/js'))
+};
 
-//Definicja tasków
-gulp.task('build', function (callback) {
-  runSequence('clean:dist','watch', 'sass', 'browserSync',callback)
-});
+const html = function (cb) {
+  return gulp.src('src/*.html')
+    .pipe(gulp.dest('dist'))
+};
+
+const htmlReload = function (cb) {
+  browserSync.reload();
+  cb();
+};
+
+const watch = function () {
+  gulp.watch("src/scss/**/*.scss", { usePolling: true }, gulp.series(css));
+  gulp.watch("src/js/**/*.js", { usePolling: true }, gulp.series(js));
+  gulp.watch("src/*.html", { usePolling: true }, gulp.series(html, htmlReload));
+};
+
+exports.default = gulp.series(css, html, js, server, watch);
+exports.css = css;
+exports.html = html;
+exports.js = js;
+exports.watch = watch;

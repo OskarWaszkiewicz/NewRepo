@@ -23,9 +23,11 @@
     "gulp": "^4.0.2",
     "gulp-autoprefixer": "^8.0.0",
     "gulp-sass": "^5.0.0",
-    "run-sequence": "^2.2.1"
+    "gulp4-run-sequence": "^1.0.1",
+    "run-sequence": "^2.2.1",
+    "sass": "^1.43.5"
   },
   "browserslist": [
     "defaults"
-  ],
+  ]
 }
