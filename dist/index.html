@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="pl">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Calculator</title>
+    <link rel="stylesheet" href="css/style.css">
+</head>
+
+<body>
+    <table class="calc">
+        <tr>
+            <td colspan="6">
+                <p>
+
+                </p>
+            </td>
+        </tr>
+        <tr>
+            <th colspan="4"><input type="text" class="calc__resultBox" maxlength="10" disabled></th>
+            <th>
+                <button class="calc__button calc__button--zoom" onclick="ZoomInButt()">+</button>
+                <button class="calc__button calc__button--zoom" onclick="ZoomOutButt()">-</button>
+            </th>
+        </tr>
+        <tr>
+            <td>
+                <button class="calc__button" onclick="Reset()">C</button>
+            </td>
+            <td>
+                <button class="calc__button" onclick="BackspaceButt()">⌫</button>
+            </td>
+            <td>
+                <button class="calc__button" onclick="SquareRootButt()">√</button>
+            </td>
+            <td>
+                <button class="calc__button" onclick="PickedOperation(this)">+</button>
+            </td>
+        </tr>
+        <tr>
+            <td>
+                <button class="calc__button" onclick="PickedNumberOrDot(this)">7</button>
+            </td>
+            <td>
+                <button class="calc__button" onclick="PickedNumberOrDot(this)">8</button>
+            </td>
+            <td>
+                <button class="calc__button" onclick="PickedNumberOrDot(this)">9</button>
+            </td>
+            <td>
+                <button class="calc__button" onclick="PickedOperation(this)">-</button>
+            </td>
+        </tr>
+        <tr>
+            <td>
+                <button class="calc__button" onclick="PickedNumberOrDot(this)">4</button>
+            </td>
+            <td>
+                <button class="calc__button" onclick="PickedNumberOrDot(this)">5</button>
+            </td>
+            <td>
+                <button class="calc__button" onclick="PickedNumberOrDot(this)">6</button>
+            </td>
+            <td>
+                <button class="calc__button" onclick="PickedOperation(this)">x</button>
+            </td>
+        </tr>
+        <tr>
+            <td>
+                <button class="calc__button" onclick="PickedNumberOrDot(this)">1</button>
+            </td>
+            <td>
+                <button class="calc__button" onclick="PickedNumberOrDot(this)">2</button>
+            </td>
+            <td>
+                <button class="calc__button" onclick="PickedNumberOrDot(this)">3</button>
+            </td>
+            <td>
+                <button class="calc__button" onclick="PickedOperation(this)">÷</button>
+            </td>
+        </tr>
+        <tr>
+            <td colspan="2">
+                <button class="calc__button calc__button--zeroButt" onclick="PickedNumberOrDot(this)">0</button>
+            </td>
+            <td>
+                <button class="calc__button" onclick="PickedNumberOrDot(this)">.</button>
+            </td>
+            <td>
+                <button class="calc__button" onclick="EqualsButtonFunc()">=</button>
+            </td>
+        </tr>
+    </table>
+    <script src="js/code.js"></script>
+</body>
+
+</html>
