@@ -4,7 +4,7 @@ let number1 = 0;
 let number2 = 0;
 let currentOperation = "";
 let afterEqual = false;
-let i = 1;
+let i = 0;
 let tooBigNumb = false;
 resultBox.value = currentNumber;
 
